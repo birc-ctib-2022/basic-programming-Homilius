@@ -1,6 +1,8 @@
 import sys
 
-x = sys.argv[1:len(sys.argv)]
+
+x = sys.stdin.read()
+x = x.strip().split(' ')
 
 
 def print_list(x):
@@ -11,13 +13,13 @@ if len(sys.argv) < 2:
     print("Incorrect number of arguments.", file=sys.stderr)
     sys.exit(1)
 
-
 # mean:
-x_sum = 0
-for j in x:
-    x_sum+=int(j)
-mean = x_sum/len(x)
-print(mean)
+if sys.argv[1] == 'mean':
+    x_sum = 0
+    for j in x:
+        x_sum+=int(j)
+    mean = x_sum/len(x)
+    print(mean)
 
 # times three:
 times_three = []
