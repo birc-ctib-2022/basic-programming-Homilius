@@ -33,5 +33,5 @@ if sys.argv[1] == 'even':
     even = []
     for j in x:
         if int(j) % 2 == 0:
-    even.append(j)
+            even.append(j)
     print_list(even)
