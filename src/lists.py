@@ -22,18 +22,16 @@ if sys.argv[1] == 'mean':
     print(mean)
 
 # times three:
-times_three = []
-for j in x:
-    times_three.append(int(j)*3)
-print_list(times_three)
-
+if sys.argv[1] == 'times':
+    times_three = []
+    for j in x:
+        times_three.append(int(j)*3)
+    print_list(times_three)
 
 # even:
-even = []
-for j in x:
-    if int(j) % 2 == 0:
-        even.append(j)
-print_list(even)
-
-
-print('input list: ', x)
+if sys.argv[1] == 'even':
+    even = []
+    for j in x:
+        if int(j) % 2 == 0:
+    even.append(j)
+    print_list(even)

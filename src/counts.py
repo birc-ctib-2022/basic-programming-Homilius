@@ -1,6 +1,7 @@
 import sys
 
-x = sys.argv[1]
+x = (sys.stdin.read() if len(sys.argv) < 2 else sys.argv[1])
+x = x.strip()
 
 count = {}
 for character in x:
@@ -10,3 +11,5 @@ for character in x:
 
 for a in sorted(count):
     print(f"{a}: {count[a]}")
+
+
