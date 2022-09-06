@@ -1,22 +1,23 @@
 import sys
 
-# This program should take two arguments, a command--either "encode" or "decode"--
-# and then a string.
-
 if len(sys.argv) != 3:
     print("Incorrect number of arguments.", file=sys.stderr)
     print(f"Usage: {sys.argv[0]} command string\n", file=sys.stderr)
     sys.exit(1)
 
-command, x = sys.argv[1:3]
+command = sys.argv[1]
+x = sys.argv[2]
 
-match command:
-    case "encode":
-        # Implement the encoding here
-        encoding = ""
-        print(encoding)
+encode_list = []
+if command == 'encode':
+    for character in x:
+        encode_list.append(hex(ord(character)))
+    print(''.join(encode_list))
 
-    case "decode":
-        # Implement the decoding here
-        decoding = ""
-        print(decoding)
+decode_list = []
+if command == 'decode':
+    for num in x.split('0x')[1:]:
+        decode_list.append(chr(int(num, base=16)))
+    print(''.join(decode_list))
+
+
